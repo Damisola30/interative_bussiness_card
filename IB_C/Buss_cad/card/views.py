@@ -1,8 +1,13 @@
+import os
 from django.shortcuts import render
+from dotenv import find_dotenv, load_dotenv
 
 
 # Create your views here.
-
+dotenv_path = find_dotenv()
+load_dotenv (dotenv_path)
+TEST = os.getenv("EST_ENV_VAR")
+print(TEST)
 def home(request):
     return render(request, 'card/buss_RF.html')
 
